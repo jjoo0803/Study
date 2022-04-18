@@ -1,12 +1,32 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
+      <!-- <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
+      <router-link to="/test">test</router-link> -->
+      <button @click="goToHomePage">Home</button> |
+      <button @click="goToAboutPage">About</button>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  created () {
+    // this.$router.push('/')
+  },
+  methods: {
+    goToHomePage () {
+      // this.$router.push('가고 싶은 경로').catch(() => {})
+      this.$router.push('/').catch(() => {})
+    },
+    goToAboutPage () {
+      this.$router.push('/about').catch(() => {})
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -17,14 +37,15 @@
   color: #2c3e50;
 }
 
+
 nav {
   padding: 30px;
 
-  a {
+  button {
     font-weight: bold;
     color: #2c3e50;
 
-    &.router-link-exact-active {
+    &:active {
       color: #42b983;
     }
   }

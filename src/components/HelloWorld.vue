@@ -8,6 +8,7 @@
     </p>
     <h3>Installed CLI Plugins</h3>
     <button @click="bbb">버튼</button>
+    <button @click="ccc">버튼2</button>
   </div>
 </template>
 
@@ -31,6 +32,9 @@ export default {
       console.log('선물 보냄')
       this.$emit('toYou', this.gift)
       // 부모한테 선물을 보내고 싶어!!!
+    },
+    ccc () {
+      console.log('버튼2')
     }
   }
 }
